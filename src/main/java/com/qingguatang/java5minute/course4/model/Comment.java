@@ -9,6 +9,7 @@ public class Comment {
     private String content;//内容
     private Date commentTime;//时间
     private int likeNum;//点赞数
+    private String id;//
 
     public String getIcon() {
         return icon;
@@ -48,5 +49,13 @@ public class Comment {
 
     public void setLikeNum(int likeNum) {
         this.likeNum = likeNum;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

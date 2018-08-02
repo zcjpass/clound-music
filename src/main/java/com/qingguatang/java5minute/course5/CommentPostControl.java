@@ -20,7 +20,7 @@ public class CommentPostControl {
 
         Date commentTime = new Date();
         comment.setCommentTime(commentTime);
-
+        comment.setId(UUID.randomUUID().toString());
         comments.computeIfAbsent(songId,k->new ArrayList<>()).add(comment);
 
         List<Comment> commentList = comments.get(songId);
@@ -38,6 +38,7 @@ public class CommentPostControl {
         return "redirect:/comments";
     }
     public List<Comment> getComments(String songId){
+
         return comments.get(songId);
     }
 }
