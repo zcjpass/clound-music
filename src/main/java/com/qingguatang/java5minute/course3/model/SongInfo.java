@@ -8,6 +8,8 @@ public class SongInfo {
     private int commentCount;//评论数
     private String lyrics;//歌词
     private String albumImg;//专辑图片
+    private String id;//
+
 
     public String getName() {
 
@@ -67,5 +69,13 @@ public class SongInfo {
     public void setAlbumImg(String albumImg) {
 
         this.albumImg = albumImg;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 }

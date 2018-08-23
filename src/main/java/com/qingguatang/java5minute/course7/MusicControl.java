@@ -8,6 +8,7 @@ import javax.annotation.PostConstruct;
 import java.util.HashMap;
 import java.util.Map;
 
+
 @Controller
 public class MusicControl {
 
@@ -17,11 +18,10 @@ public class MusicControl {
     public String getMusicSrc(String songId){
         return musics.get(songId);
     }
-
     @PostConstruct
     public void init(){
-
-        musics.put("35847388","http://120.198.224.101/cache/m10.music.126.net/20180803165451/72a8ffa866c0fedfc739a0f3b1804b1e/ymusic/de9a/6885/e183/effb8f74546c98fd619d51f22e2bfaaf.mp3?ich_args2=1299-03162900002462_e428c2d5c2e0c8728df003b8884939aa_10012302_9c89672fd5cbf5d89e3b518939a83798_7696b7a6256c7fa0adb6e781453f525c");
+        musics.put("35847388","https://m10.music.126.net/20180822234122/8888b56dacae16150dd26928d2372d2e/ymusic/de9a/6885/e183/effb8f74546c98fd619d51f22e2bfaaf.mp3");
+        musics.put("16435049","https://m10.music.126.net/20180822234323/03087845b8b8972d4cbb56a4558e626b/ymusic/de9a/6885/e183/effb8f74546c98fd619d51f22e2bfaaf.mp3");
 
     }
 }
