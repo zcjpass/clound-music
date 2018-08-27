@@ -1,27 +1,35 @@
 package com.qingguatang.java5minute.course3;
 
+import com.qingguatang.java5minute.course5.CommentPostControl;
+import com.qingguatang.java5minute.course4.model.Comment;
 import com.qingguatang.java5minute.course3.model.SongInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Controller
 public class SongInfoControl {
 
         private static Map<String,SongInfo> songInfoMap = new HashMap<>();
+        @Autowired
+        private CommentPostControl commentPostControl;
 
         @RequestMapping(value = "/songinfo")
         public String index(String songId, ModelMap modelMap){
 
             if(songId == null){
-                songId = "16435049";
+                songId = "35847388";
             }
             SongInfo songInfo = songInfoMap.get(songId);
             modelMap.addAttribute("song", songInfo);
+            List<Comment> comments = commentPostControl.getComments(songId);
+            modelMap.addAttribute("comments", comments);
 
             return "index";
         }
